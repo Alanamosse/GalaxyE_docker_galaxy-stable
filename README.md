@@ -66,9 +66,9 @@ The image built with GalaxyE_tool_list.yml will help to do final tests on develo
     
     * [x] GdalBuildVRT
     
-    * NetcdfRead
+    * [x] NetcdfRead
     
-    * NetcdfMetadataInfo
+    * [x] NetcdfMetadataInfo
 
 
 * Need some work / Not sure yet
