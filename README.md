@@ -32,13 +32,13 @@ Open your web browser on http://localhost:8080
     
 * VigieChiro 
 
-    * IdCorrect2ndlayer
+    * [x] IdCorrect2ndlayer
     
-    * BilanEnrichi
+    * [x] BilanEnrichi
     
-    * IdValid
+    * [x] IdValid
     
-    * Sqlite tadarida to tabular
+    * [x] Sqlite tadarida to tabular
     
     * Tadarida-c
     

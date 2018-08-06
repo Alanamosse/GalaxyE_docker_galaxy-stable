@@ -63,3 +63,9 @@ tools:
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
     - '0e7066603eab'
+
+- name: vigiechiro
+  owner: mnhn65mo
+  tool_panel_section_label: "VigieChiro tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
