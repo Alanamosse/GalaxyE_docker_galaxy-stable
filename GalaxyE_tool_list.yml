@@ -52,5 +52,14 @@ tools:
   tool_panel_section_label: "GIS related tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
+- name: netcdf_handler
+  owner: mnhn65mo
+  tool_panel_section_label: "GIS related tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
-
+- name: regionalgam
+  owner: mnhn65mo
+  tool_panel_section_label: "RegionalGAM analysis"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+    - '0e7066603eab'
