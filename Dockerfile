@@ -7,7 +7,6 @@ ENV GALAXY_CONFIG_BRAND="GalaxyE"
 
 WORKDIR /galaxy-central
 RUN add-tool-shed --url 'https://toolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
-#RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
 
 ADD GalaxyE_tool_list.yml $GALAXY_ROOT/GalaxyE_tool_list.yml
 
@@ -23,13 +22,3 @@ EXPOSE :8800
 
 # Autostart script that is invoked during container start
 CMD ["/usr/bin/startup"]
-
-
-
-#AD Dmy_tool_list.yml $GALAXY_ROOT/tools.yaml
-#
-#RUN install-tools $GALAXY_ROOT/tools.yaml && \
-#    /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
-#rm /export/galaxy-central/ -rf
-#
-
