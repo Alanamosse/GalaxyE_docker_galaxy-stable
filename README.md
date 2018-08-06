@@ -4,6 +4,18 @@ Derived from bgruening/docker-galaxy-stable https://github.com/bgruening/docker-
 
 The image built with GalaxyE_tool_list.yml will help to do final tests on developped tools.
 
+## How to run :
+
+In the repo. 
+
+```
+$ docker build -t galaxy-e .
+
+$ docker run -p 8080:80 galaxy-e
+```
+
+Open your web browser on http://localhost:8080
+
 ## Categories and tool list to test  :
 
 * Upload
@@ -35,19 +47,19 @@ The image built with GalaxyE_tool_list.yml will help to do final tests on develo
     
 * RegionalGAM
 
-    * Expected temporal trend
+    * [x] Expected temporal trend
     
-    * Abundance index
+    * [x] Abundance index
     
-    * Linear regression
+    * [x] Linear regression
     
-    * Trend
+    * [x] Trend
     
-    * Linear regression ajusted
+    * [x] Linear regression ajusted
     
-    * Autocorrection residus
+    * [x] Autocorrection residus
     
-    * Fligth curve
+    * [x] Fligth curve
     
     
 * SIG
