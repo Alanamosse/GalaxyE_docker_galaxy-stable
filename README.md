@@ -6,7 +6,7 @@ The image built with GalaxyE_tool_list.yml will help to do final tests on develo
 
 ## How to run :
 
-In the repo. 
+In the repo :  
 
 ```
 $ docker build -t galaxy-e .
@@ -30,7 +30,7 @@ Open your web browser on http://localhost:8080
     * Rdata parser
     
     
-* VigieChiro #TODO check with yves its ok to make the classifier available
+* VigieChiro 
 
     * IdCorrect2ndlayer
     
