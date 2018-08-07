@@ -25,9 +25,9 @@ Open your web browser on http://localhost:8080
    
 * Rdata files manipulation
 
-    * Rdata reader
+    * [x] Rdata reader
     
-    * Rdata parser
+    * [x] Rdata parser
     
     
 * VigieChiro 
