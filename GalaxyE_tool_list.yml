@@ -69,3 +69,10 @@ tools:
   tool_panel_section_label: "VigieChiro tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
 
+- name: rdata_handler
+  owner: mnhn65mo
+  tool_panel_section_label: "Rdata handler tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+    - '5184899fd06e'
+
