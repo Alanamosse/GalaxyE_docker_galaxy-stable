@@ -76,3 +76,13 @@ tools:
   revisions:
     - '5184899fd06e'
 
+- name: csv_to_tabular
+  owner: mnhn65mo
+  tool_panel_section_label: "Convert format"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
+- name: tabular_to_csv
+  owner: mnhn65mo
+  tool_panel_section_label: "Convert format"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+
