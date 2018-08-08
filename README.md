@@ -85,9 +85,9 @@ Open your web browser on http://localhost:8080
 
 * Convert format
 
-    * Tabular2csv
+    * [x] Tabular2csv
     
-    * Csv2tabular
+    * [x] Csv2tabular
     
     
 * Need some work / Not sure yet
