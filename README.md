@@ -96,7 +96,7 @@ Open your web browser on http://localhost:8080
     
     * Langue2Boeuf
     
-    * Worldclim climatic data
+    * [x] Worldclim climatic data #Ok without the geotif save option. What's wrong with r-rgdal in conda ? need few more tests
     
     * STOCeps
     
