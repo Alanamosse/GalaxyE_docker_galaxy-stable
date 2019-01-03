@@ -1,112 +1,462 @@
 ---
-# This is a sample file to be used as a reference for populating a list of
-# tools that you wish to install into Galaxy from a Tool Shed via the
-# `install_tool_shed_tools.py` script.
-#
-# For each tool you want to install, you must provide the following keys:
-#  * name: this is is the name of the tool to install
-#  * owner: owner of the Tool Shed repository from where the tools is being
-#           installed
-# Further, you need to provide **one** of the following two keys:
-#  * tool_panel_section_id: ID of the tool panel section where you want the
-#                           tool to be installed. The section ID can be found
-#                           in Galaxy's `shed_tool_conf.xml` config file. Note
-#                           that the specified section must exist in this file.
-#                           Otherwise, the tool will be installed outside any
-#                           section.
-#  * tool_panel_section_label: Display label of a tool panel section where
-#                              you want the tool to be installed. If it does not
-#                              exist, this section will be created on the target
-#                              Galaxy instance (note that this is different than
-#                              when using the ID).
-#                              Multi-word labels need to be placed in quotes.
-#                              Each label will have a corresponding ID created;
-#                              the ID will be an all lowercase version of the
-#                              label, with multiple words joined with
-#                              underscores (e.g., 'BED tools' -> 'bed_tools').
-#
-# You can also specify the following optional keys to further define the
-# installation properties:
-#  * tool_shed_url: the URL of the Tool Shed from where the tool should be
-#                   installed. (default: https://toolshed.g2.bx.psu.edu)
-#  * revisions: a list of revisions of the tool, all of which will attempt to
-#               be installed. (default: latest)
-#  * install_tool_dependencies: True or False - whether to install classic galaxy 
-#                               Tool Shed dependencies or not. (default: True)
-#  * install_repository_dependencies: True or False - whether to install classic
-#                               Galaxy Tool Shed repo dependencies or not. 
-#                               (default: True)
-#  * install_resolver_dependencies: True or False - whether to install dependencies
-#                                through a resolver (e.g Conda). (default: False)
+api_key : admin
+galaxy_instance : http://localhost:8080
+install_repository_dependencies: true
+install_resolver_dependencies: true
+install_tool_dependencies: false
 
-api_key: admin
-galaxy_instance: http://localhost:8080
 tools:
-#- name: spocc_occ
-#  owner: mnhn65mo
-#  tool_panel_section_label: "Spocc occurence data"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#
-#- name: gdal 
-#  owner: mnhn65mo
-#  tool_panel_section_label: "GIS related tools"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#
-#- name: netcdf_handler
-#  owner: mnhn65mo
-#  tool_panel_section_label: "GIS related tools"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#
-#- name: regionalgam
-#  owner: mnhn65mo
-#  tool_panel_section_label: "RegionalGAM analysis"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#  revisions:
-#    - '0e7066603eab'
-#
-#- name: vigiechiro
-#  owner: mnhn65mo
-#  tool_panel_section_label: "VigieChiro tools"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#
-#- name: rdata_handler
-#  owner: mnhn65mo
-#  tool_panel_section_label: "Rdata handler tools"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#  revisions:
-#    - '5184899fd06e'
-#
-#- name: csv_to_tabular
-#  owner: mnhn65mo
-#  tool_panel_section_label: "Convert format"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#
-#- name: tabular_to_csv
-#  owner: mnhn65mo
-#  tool_panel_section_label: "Convert format"
-#  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-#
-- name: "get_worldclim_data"
-  owner: mnhn65mo
-  tool_panel_section_label: "Worldclim data"
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-  revisions :
-    - '4507b52cbb7a'
-#    - 'c29f8b25651c'
-#    - '4ba0045984f7'
-#    - '4ba0045984f7'
-#    - '65b9ca4df74a'
-#    - '008cbcc1e3f6'
+  - name: 'collapse_collections'
+    owner: 'nml'
+    tool_panel_section_label: 'Collection Operations'
 
-- name: "butterfly_analysis"
-  owner: mnhn65mo
-  tool_panel_section_label: "Butterfly analysis"
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
-  revisions :
-    - '22813beb2fa8'
-#    - 'a3260d4f7868'
-#    - '84e6a689d611'
-#    - '9daba7983d38'
-#    - 'c29354d16967'
+  - name: dwt_var_perfeature
+    owner: devteam
+    tool_panel_section_label: Statistics
 
+  - name: transformation
+    owner: ethevenot
+    tool_panel_section_label: Statistics
+
+  - name: anova
+    owner: lecorguille
+    tool_panel_section_label: Statistics
+
+  - name: heatmap
+    owner: ethevenot
+    tool_panel_section_label: Statistics
+
+  - name: univariate
+    owner: ethevenot
+    tool_panel_section_label: Statistics
+
+  - name: multivariate
+    owner: ethevenot
+    tool_panel_section_label: Statistics
+
+  - name: biosigner
+    owner: ethevenot
+    tool_panel_section_label: Statistics
+
+  - name: lcmsmatching
+    owner: prog
+    tool_panel_section_label: Annotation
+
+  - name: add_input_name_as_column
+    owner: mvdbeek
+    tool_panel_section_label: Text Manipulation
+
+  - name: text_processing
+    owner: bgruening
+    tool_panel_section_label: Text Manipulation
+
+  - name: column_maker
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: prinseq
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+  
+ 
+  - name: split_file_on_column
+    owner: bgruening
+    tool_panel_section_label: Text Manipulation
+  
+  - name: merge_cols
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+  
+  - name: coverage
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+ 
+  - name: regex_replace
+    owner: kellrott
+    tool_panel_section_label: Text Manipulation
+
+  - name: merge
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: intersect
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: join
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: subtract
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: subtract_query
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: unique
+    owner: bgruening
+    tool_panel_section_label: Text Manipulation
+
+  - name: reshape2_melt
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: reshape2_cast
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: add_value
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: jq
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: tables_arithmetic_operations
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: flanking_features
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: cluster
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: get_flanks
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: complement
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: basecoverage
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: dna_filtering
+    owner: devteam
+    tool_panel_section_label: Text Manipulation
+
+  - name: column_order_header_sort
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: column_remove_by_header
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: metagenomeseq_normalization
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: gff3_rebase
+    owner: iuc
+    tool_panel_section_label: Text Manipulation
+
+  - name: column_arrange_by_header
+    owner: bgruening
+    tool_panel_section_label: Filter and Sort
+
+  - name: seq_filter_by_id
+    owner: peterjc
+    tool_panel_section_label: Filter and Sort
+
+  - name: find_in_reference
+    owner: jjohnson
+    tool_panel_section_label: Filter and Sort
+
+  - name: sample_seqs
+    owner: peterjc
+    tool_panel_section_label: Filter and Sort
+
+  - name: suite_datamash
+    owner: iuc
+    tool_panel_section_label: Join, Subtract and Group
+
+  - name: collection_column_join
+    owner: iuc
+    tool_panel_section_label: Join, Subtract and Group
+
+  - name: numeric_clustering
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: seq_composition
+    owner: peterjc
+    tool_panel_section_label: Statistics
+
+  - name: t_test_two_samples
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: plot_from_lda
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: mine
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: lda_analysis
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: generate_pc_lda_matrix
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: count_gff_features
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: correlation
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: venn_list
+    owner: peterjc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: scatterplot
+    owner: devteam
+    tool_panel_section_label: Graph/Display Data
+
+  - name: histogram
+    owner: devteam
+    tool_panel_section_label: Graph/Display Data
+
+  - name: gmaj
+    owner: devteam
+    tool_panel_section_label: Graph/Display Data
+
+  - name: xy_plot
+    owner: devteam
+    tool_panel_section_label: Graph/Display Data
+
+  - name: draw_stacked_barplots
+    owner: devteam
+    tool_panel_section_label: Graph / Display Data
+
+  - name: ggplot2_pca
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: pygenometracks
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: ggplot2_heatmap
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: ggplot2_violin
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: ggplot2_heatmap2
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: ggplot2_point
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: ggplot2_histogram
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: tsne
+    owner: iuc
+    tool_panel_section_label: Graph/Display Data
+
+  - name: best_regression_subsets
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: principal_component_analysis
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: kernel_principal_component_analysis
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: kernel_canonical_correlation_analysis
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: canonical_correlation_analysis
+    owner: devteam
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_svm_classifier
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_sample_generator
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_searchcv
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_build_pipeline
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_pairwise_metrics
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_nn_classifier
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_numeric_clustering
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_ensemble
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_feature_selection
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_data_preprocess
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_clf_metrics
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_regression_metrics
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_discriminant_classifier
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_generalized_linear
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_model_validation
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: scipy_sparse
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+  - name: sklearn_suite
+    owner: bgruening
+    tool_panel_section_label: Statistics
+
+
+  - name: regex_find_replace
+    owner: galaxyp
+    tool_panel_section_label: Text Manipulation
+
+
+  - name: suite_obitools
+    owner: iuc
+    tool_panel_section_label: DNA metabarcoding
+    
+
+  - name: fastq_groomer
+    owner: devteam
+    tool_panel_section_label: Quality check
+    
+  - name: fastqc
+    owner: devteam
+    tool_panel_section_label: Quality check
+    
+  - name: multiqc
+    owner: iuc
+    tool_panel_section_label: Quality check
+    
+  - name: mothur_sffinfo
+    owner: iuc
+    tool_panel_section_label: File Conversion
+    
+  - name: fastq_combiner
+    owner: devteam
+    tool_panel_section_label: File Conversion
+    
+  - name: frogs_2_0_0
+    owner: frogs
+    tool_panel_section_label: Find Rapidly OTUs from NGS
+
+
+
+
+
+
+
+
+
+  - name: csv_to_tabular
+    owner: mnhn65mo
+    tool_panel_section_label: File Conversion
+    
+
+  - name: tabular_to_csv
+    owner: mnhn65mo
+    tool_panel_section_label: File Conversion
+
+
+  - name: xls2tabular
+    owner: ylebras
+    tool_panel_section_label: File Conversion
+    
+
+  - name: butterfly_analysis
+    owner: mnhn65mo
+    tool_panel_section_label: Graph/Display Data
+    
+
+  - name: gdal
+    owner: mnhn65mo
+    tool_panel_section_label: GIS Data Handling
+    
+
+  - name: get_worldclim_data
+    owner: mnhn65mo
+    tool_panel_section_label: Get Data
+    
+
+  - name: spocc_occ
+    owner: mnhn65mo
+    tool_panel_section_label: Get Data
+    
+
+  - name: netcdf_handler
+    owner: mnhn65mo
+    tool_panel_section_label: File conversion
+    
+
+  - name: rdata_handler
+    owner: mnhn65mo
+    tool_panel_section_label: File conversion
+    
+
+  - name: regionalgam
+    owner: mnhn65mo
+    tool_panel_section_label: Phenology & Abundance Index
+    
+
+  - name: vigiechiro
+    owner: mnhn65mo
+    tool_panel_section_label: Animal Detection on Acoustic Recordings
 

@@ -1,17 +1,16 @@
 FROM bgruening/galaxy-stable
 
-MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
 
-ENV GALAXY_CONFIG_BRAND="GalaxyE" 
+MAINTAINER yvanlebras
 
+
+ADD galaxy-e_tool_list.yml $GALAXY_ROOT/my_tool_list.yml
+RUN install-tools $GALAXY_ROOT/my_tool_list.yml
+
+ENV GALAXY_CONFIG_BRAND="Ecology" \
+    GALAXY_DEFAULT_ADMIN_USER=yvan.le-bras@mnhn.fr
 
 WORKDIR /galaxy-central
-RUN add-tool-shed --url 'https://toolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
-
-ADD GalaxyE_tool_list.yml $GALAXY_ROOT/GalaxyE_tool_list.yml
-
-RUN install-tools $GALAXY_ROOT/GalaxyE_tool_list.yml
-
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/data/", "/var/lib/docker"]
 
@@ -22,3 +21,4 @@ EXPOSE :8800
 
 # Autostart script that is invoked during container start
 CMD ["/usr/bin/startup"]
+
